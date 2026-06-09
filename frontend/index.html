@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SmartPlanner</title>
+  </head>
+  <body>
+    <h1>SmartPlanner</h1>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+    <button id="generateSchedule">Générer Planning</button>
+    <h2>Planning</h2>
+    <ul id="scheduleList"></ul>
+
+    <form id="taskForm">
+      <input type="text" id="taskInput" placeholder="Nouvelle tâche" required>
+      <input type="number" id="taskDuration" placeholder="Durée (h)" min="1" required>
+      <select id="taskPriority" required>
+        <option value="" disabled selected>Priorité</option>
+        <option value="haute">Haute</option>
+        <option value="moyenne">Moyenne</option>
+        <option value="basse">Basse</option>
+      </select>
+      <button type="submit">Ajouter</button>
+    </form>
+    <ul id="taskList"></ul>
+  </body>
+</html>
+
+
+
+
