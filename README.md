@@ -1,34 +1,28 @@
-# 📅 SmartPlanner
+# SmartPlanner
 
 A full-stack task planner that turns a simple to-do list into an automatically generated daily schedule, ordered by priority.
 *Application full-stack qui transforme une liste de tâches en planning quotidien généré automatiquement, selon la priorité de chaque tâche.*
 
----
+## Fonctionnalités
 
-## ✨ Fonctionnalités
+- Ajouter une tâche avec un nom, une durée (en heures) et une priorité (`haute`, `moyenne`, `basse`)
+- Supprimer une tâche
+- Lister les tâches, triées par priorité
+- Générer automatiquement un planning de la journée : les tâches sont ordonnées par priorité puis placées les unes après les autres à partir de 8h00
+- Persistance des données côté serveur (fichier `tasks.json`)
 
-- ➕ Ajouter une tâche avec un nom, une durée (en heures) et une priorité (`haute`, `moyenne`, `basse`)
-- 🗑️ Supprimer une tâche
-- 📋 Lister les tâches, triées par priorité
-- 🧠 Générer automatiquement un planning de la journée : les tâches sont ordonnées par priorité puis placées les unes après les autres à partir de 8h00
-- 💾 Persistance des données côté serveur (fichier `tasks.json`)
-
----
-
-## 🛠️ Stack technique
+## Stack technique
 
 **Backend**
-- [Node.js](https://nodejs.org/) + [Express 5](https://expressjs.com/)
-- [CORS](https://www.npmjs.com/package/cors)
+- Node.js + Express 5
+- CORS
 - Persistance simple en JSON (`fs/promises`)
 
 **Frontend**
-- [Vite](https://vitejs.dev/)
+- Vite
 - JavaScript vanilla, HTML, CSS
 
----
-
-## 📁 Structure du projet
+## Structure du projet
 
 ```
 SmartPlanner/
@@ -44,9 +38,7 @@ SmartPlanner/
     └── package.json
 ```
 
----
-
-## 🚀 Installation & lancement
+## Installation & lancement
 
 Le projet a deux parties à lancer séparément (deux terminaux).
 
@@ -68,24 +60,20 @@ npm run dev
 
 Une fois les deux serveurs lancés, ouvre l'URL donnée par Vite dans ton navigateur.
 
----
+## API
 
-## 🔌 API
+| Méthode | Route          | Description                                        |
+|---------|----------------|-----------------------------------------------------|
+| GET     | `/`            | Vérifie que le serveur répond                        |
+| GET     | `/tasks`       | Liste toutes les tâches                              |
+| POST    | `/tasks`       | Ajoute une tâche `{ nom, duree, priorite }`          |
+| DELETE  | `/tasks/:id`   | Supprime une tâche                                   |
+| GET     | `/schedule`    | Génère le planning du jour, trié par priorité        |
 
-| Méthode | Route          | Description                                      |
-|---------|----------------|---------------------------------------------------|
-| GET     | `/`            | Vérifie que le serveur répond                     |
-| GET     | `/tasks`       | Liste toutes les tâches                           |
-| POST    | `/tasks`       | Ajoute une tâche `{ nom, duree, priorite }`       |
-| DELETE  | `/tasks/:id`   | Supprime une tâche                                |
-| GET     | `/schedule`    | Génère le planning du jour, trié par priorité     |
+## Pistes d'amélioration
 
----
-
-## 💡 Pistes d'amélioration
-
-- [ ] Modifier une tâche existante
-- [ ] Choisir l'heure de début de journée (actuellement fixée à 8h00)
-- [ ] Persistance via une vraie base de données
-- [ ] Déploiement (frontend sur GitHub Pages / Vercel, backend sur Render)
-- [ ] Tests automatisés
+- Modifier une tâche existante
+- Choisir l'heure de début de journée (actuellement fixée à 8h00)
+- Persistance via une vraie base de données
+- Déploiement (frontend sur GitHub Pages / Vercel, backend sur Render)
+- Tests automatisés
