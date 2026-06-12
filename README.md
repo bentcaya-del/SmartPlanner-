@@ -40,9 +40,14 @@ SmartPlanner/
 
 ## Installation & lancement
 
-Le projet a deux parties à lancer séparément (deux terminaux).
+### 1. Cloner le repo
 
-### 1. Backend (API — http://localhost:5000)
+```bash
+git clone https://github.com/bentcaya-del/SmartPlanner.git
+cd SmartPlanner
+```
+
+### 2. Backend (API — http://localhost:5000)
 
 ```bash
 cd backend
@@ -50,7 +55,7 @@ npm install
 npm run dev      # avec nodemon, ou "npm start" en simple
 ```
 
-### 2. Frontend (interface — http://localhost:5173)
+### 3. Frontend (interface — http://localhost:5173)
 
 ```bash
 cd frontend
@@ -58,7 +63,9 @@ npm install
 npm run dev
 ```
 
-Une fois les deux serveurs lancés, ouvre l'URL donnée par Vite dans ton navigateur.
+Ouvre ensuite l'URL affichée dans le terminal (par défaut `http://localhost:5173`).
+
+> Le backend doit être lancé avant le frontend pour que l'application fonctionne correctement.
 
 ## API
 
@@ -77,3 +84,7 @@ Une fois les deux serveurs lancés, ouvre l'URL donnée par Vite dans ton naviga
 - Persistance via une vraie base de données
 - Déploiement (frontend sur GitHub Pages / Vercel, backend sur Render)
 - Tests automatisés
+
+## Auteur
+
+Projet réalisé par **Ben-tchichia Aya**
